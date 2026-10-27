@@ -1,0 +1,51 @@
+{
+  "name": "@1lon/pi-preset",
+  "version": "0.1.0",
+  "description": "My personal pi coding agent preset: package manifest + custom extensions",
+  "type": "module",
+  "packageManager": "pnpm@9.15.9",
+  "bin": {
+    "pi-preset": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "extensions",
+    "presets",
+    ".agents"
+  ],
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
+  },
+  "scripts": {
+    "dev": "tsx src/cli/index.ts",
+    "build": "tsdown",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "tsc --noEmit && tsdown",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "vitest run --config vitest.config.e2e.ts",
+    "test:e2e:dist": "tsdown && E2E_TARGET=dist vitest run --config vitest.config.e2e.ts",
+    "test:all": "vitest run && npm run test:e2e && npm run test:e2e:dist"
+  },
+  "dependencies": {
+    "commander": "^15.0.0"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*",
+    "@earendil-works/pi-tui": "*"
+  },
+  "devDependencies": {
+    "@earendil-works/pi-coding-agent": "^1.4.0",
+    "@earendil-works/pi-tui": "^1.4.0",
+    "@types/node": "^26.6.5",
+    "tsdown": "^0.23.2",
+    "tsx": "^4.19.0",
+    "typescript": "^7.0.2",
+    "vitest": "^2.1.9"
+  },
+  "license": "MIT"
+}

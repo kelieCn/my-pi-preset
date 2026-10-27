@@ -1,0 +1,18 @@
+{
+  "packages": [
+    "npm:@tintinweb/pi-subagents",
+    "npm:pi-input-history",
+    "npm:pi-init",
+    "npm:pi-powerline-footer",
+    "git:github.com/obra/superpowers",
+    {
+      "source": "npm:pi-code",
+      "extensions": [
+        "!extensions/mcp/**",
+        "!extensions/subagent/**",
+        "!extensions/skills.ts"
+      ]
+    },
+    "npm:pi-compact-tools"
+  ]
+}
