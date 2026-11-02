@@ -1,6 +1,6 @@
 {
   "name": "@1lon/pi-preset",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "My personal pi coding agent preset: package manifest + custom extensions",
   "type": "module",
   "packageManager": "pnpm@9.15.9",
